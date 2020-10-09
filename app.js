@@ -6,6 +6,15 @@ const app = Vue.createApp({
       confirmName: ''
     };
   },
+  computed: {
+    fullName() {
+      if (this.name === '') {
+        return '';
+      } else {
+        return this.name + ' ' + 'Moore';
+      } 
+    }
+  },
   methods: {
     add(num) {
       this.counter = this.counter + num;
@@ -13,9 +22,9 @@ const app = Vue.createApp({
     reduce(num) {
       this.counter = this.counter - num;
     },
-    setName(event, lastName) {
-      this.name = event.target.value;
-    },
+    // setName(event, lastName) {
+    //   this.name = event.target.value + ' ' + lastName;
+    // },
     // submitForm() {
     //   alert('Submitted!');
     // },
@@ -24,7 +33,14 @@ const app = Vue.createApp({
     },
     resetInput() {
       this.name = '';
-    }
+    },
+    // outputFullName() {
+    //   if (this.name === '') {
+    //     return '';
+    //   } else {
+    //     return this.name + ' ' + 'Moore';
+    //   }
+    // }
   }
 });
 
